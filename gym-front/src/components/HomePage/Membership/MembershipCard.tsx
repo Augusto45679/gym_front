@@ -19,10 +19,13 @@ export const MembershipCard = ({membershipData,className,...props}:MembershipPro
                 type ? memberType[type] : "", className
             )}
             {...props}>
-            <h3 className="text-xl font-bold text-black text-center p-2 py-4">{title}</h3>
-            <div className="flex items-center justify-center w-20 h-20 mx-auto p-4">{logo}</div>
-            <span className="text-black text-lg font-semibold mt-3">${price} / Month</span>
-            <p className="text-sm text-orange-700 mt-1 py-1 font-sans font-extrabold">{description}</p>
+                <div>
+                <h3 className="text-xl font-bold text-black text-center p-2 py-4">{title}</h3>
+                <div className="flex items-center justify-center w-20 h-20 mx-auto p-4">{logo}</div>
+                <span className="text-black text-lg font-semibold mt-3">${price} / Month</span>
+                <p className="text-sm text-black mt-1 py-1 font-sans font-extrabold">{description}</p> 
+                </div>
+            
         </div>
         </div>
         

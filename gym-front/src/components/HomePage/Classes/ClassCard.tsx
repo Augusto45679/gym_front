@@ -13,18 +13,19 @@ export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
 
     const {title, description, image, type, duration} = gymClassData;
     return(
-        <div
+        <div>
+            <div
             className={cn(
-                "border-2 rounded-xl shadow-md lg:p-4 sm:p-3 transition-all duration-300 lg:hover:scale-105 hover:shadow-lg sm:w-screen",
+                "border-1 rounded-xl shadow-md lg:p-4 sm:p-3 transition-all duration-300 lg:hover:scale-105 hover:shadow-lg w-full",
                 type ? typeStyle[type] : "",
                 className
             )}
             {...props}>
-            <div className="h-48 w-full overflow-hidden rounded-md "> {/* Contenedor con altura fija */}
+            <div className="h-38 w-full rounded-md "> {/* Contenedor con altura fija */}
                 <img
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover sm:w-screen" // Imagen ajustada al contenedor
+                    className="w-full h-full object-cover" // Imagen ajustada al contenedor
                 />
             </div>
             <h3 className="text-xl font-bold mt-3 sm:text-2xl p-1">{title}</h3>
@@ -33,6 +34,8 @@ export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
                 <span className="text-sm font-semibold text-amber-500 p-1">Duration: {duration} min</span>
             </div>
             </div>
+        </div>
+        
         
     );
 }
