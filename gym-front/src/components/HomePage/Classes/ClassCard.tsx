@@ -16,7 +16,7 @@ export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
         <div>
             <div
             className={cn(
-                "border-1 rounded-xl shadow-md lg:p-4 sm:p-3 transition-all duration-300 lg:hover:scale-105 hover:shadow-lg w-full",
+                "border-2 rounded-xl shadow-md lg:p-4 sm:p-3 transition-all duration-300 lg:hover:scale-105 hover:shadow-lg w-full",
                 type ? typeStyle[type] : "",
                 className
             )}
