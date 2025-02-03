@@ -7,7 +7,7 @@ interface MembershipProps {
     className?: string;
 }
 
-export const Membership = ({membershipData,className}:MembershipProps) => {
+export const Membership = ({membershipData}:MembershipProps) => {
     return(
         <section className=" ">
             <div className="flex flex-col justify-center items-center gap-6 w-screen">
