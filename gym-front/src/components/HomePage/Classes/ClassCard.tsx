@@ -1,5 +1,10 @@
+import { Dialog } from '@headlessui/react';
+import { useState } from 'react';
 import { cn } from '../../../libs/utils';
+import Button from '../../UI/Buttons/Button';
 import { ClassType, GymClassProps } from '../../UI/Buttons/types';
+import { Schedules } from '../Schedules/Schedules';
+
 
 const typeStyle: Record<ClassType, string> = {
     crossfit: "",
@@ -12,6 +17,9 @@ const typeStyle: Record<ClassType, string> = {
 export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
 
     const {title, description, image, type, duration} = gymClassData;
+
+    const [isOpen,setIsOpen] = useState(false); 
+
     return(
         <div>
             <div
@@ -30,10 +38,26 @@ export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
             </div>
             <h3 className="text-xl font-bold mt-3 sm:text-2xl p-1">{title}</h3>
             <p className="text-sm text-white mt-1 p-1">{description}</p>
-            <div className="flex justify-between items-center mt-3 p-1">
-                <span className="text-sm font-semibold text-amber-500 p-1">Duration: {duration} min</span>
+                <div className="flex justify-between items-center mt-3 p-1">
+                    <span className="text-sm font-semibold text-amber-500 p-1">Duration: {duration} min</span>
+                </div>
+                <div>
+                    <Button variant="ghost" onClick= {()=>setIsOpen(true)}>Ver horarios</Button>
+                </div>
             </div>
-            </div>
+
+            <Dialog open={isOpen} onClose={()=> setIsOpen(false)} className="fixed inset-0 flex items-center justify-center bg-black/50" >
+                <Dialog.Panel className="bg-neutral-700 p-6 rounded-lg shadow-lg text-white ">
+                    <Dialog.Title className="text-white font-semibold">{title}- Horarios</Dialog.Title>
+                    <Schedules  classType={type as ClassType}></Schedules>
+                    <div className='p-2 justify-center'>
+                    <Button variant='ghost' onClick={()=> setIsOpen(false)}  className="text-black border-1 rounded-sm" >Cerrar</Button>
+                    </div>
+                    
+                </Dialog.Panel>
+            </Dialog>
+
+
         </div>
         
         
