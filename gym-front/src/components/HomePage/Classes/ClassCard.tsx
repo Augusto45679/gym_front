@@ -41,14 +41,14 @@ export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
                 <div className="flex justify-between items-center mt-3 p-1">
                     <span className="text-sm font-semibold text-amber-500 p-1">Duration: {duration} min</span>
                 </div>
-                <div>
-                    <Button variant="ghost" onClick= {()=>setIsOpen(true)}>Ver horarios</Button>
+                <div className='flex p-2 justify-center'>
+                    <Button variant="ghost" className=' text-amber-500' onClick= {()=>setIsOpen(true)}>Ver horarios</Button>
                 </div>
             </div>
 
             <Dialog open={isOpen} onClose={()=> setIsOpen(false)} className="fixed inset-0 flex items-center justify-center bg-black/50" >
                 <Dialog.Panel className="bg-neutral-800 p-6 rounded-lg shadow-lg text-white ">
-                    <Dialog.Title className="text-white font-semibold">{title}- Horarios</Dialog.Title>
+                    <Dialog.Title className="text-white font-semibold">{title} - Horarios</Dialog.Title>
                     <Schedules  classType={type as ClassType}></Schedules>
                     <div className='p-2 justify-center'>
                     <Button variant='ghost' onClick={()=> setIsOpen(false)}  className="text-white border-amber-400 border-1 rounded-sm" >Cerrar</Button>
