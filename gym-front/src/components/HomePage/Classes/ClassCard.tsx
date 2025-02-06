@@ -37,7 +37,7 @@ export const ClassCard = ({gymClassData,className,...props}:GymClassProps) => {
                 />
             </div>
             <h3 className="text-xl font-bold mt-3 sm:text-2xl p-1">{title}</h3>
-            <p className="text-sm text-white mt-1 p-1">{description}</p>
+            <p className="text-sm text-white mt-1 p-1 font-montserrat">{description}</p>
                 <div className="flex justify-between items-center mt-3 p-1">
                     <span className="text-sm font-semibold text-amber-500 p-1">Duration: {duration} min</span>
                 </div>
